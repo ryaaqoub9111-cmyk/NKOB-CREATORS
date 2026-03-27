@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>NKOB CREATORS | Creative Digital Agency & 3D Visualization</title>
+    <!-- Meta SEO -->
+    <meta name="description" content="NOVA is an international creative studio specializing in web design, 3D visualization, video production, and interactive experiences. We help brands tell their story with cutting-edge technology.">
+    <meta name="keywords" content="creative agency, web design, 3D visualization, video production, digital strategy, branding, WebGL, interactive experiences">
+    <meta name="author" content="NOVA Studio">
+    <link rel="canonical" href="https://www.nova-studio.com">
+    <!-- Open Graph / social media -->
+    <meta property="og:title" content="NOVA Studio - Creative Digital Agency">
+    <meta property="og:description" content="We craft digital experiences that resonate and inspire.">
+    <meta property="og:image" content="https://www.nova-studio.com/og-image.jpg">
+    <meta property="og:url" content="https://www.nova-studio.com">
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* ===== RESET & VARIABLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-light: #f8f5ff;
+    --white-glass: rgba(255, 255, 255, 0.85);
+    --violet-soft: #b6a2ff;
+    --vibrant-violet: #6d5ac9;
+    --rose-soft: #ffc2d9;
+    --vibrant-rose: #f65f8c;
+    --gold-accent: #ffcd7e;
+    --text-dark: #1e1a2b;
+    --text-light: #f0eaff;
+    --shadow-violet: rgba(109, 90, 201, 0.3);
+    --shadow-rose: rgba(246, 95, 140, 0.25);
+    --border-light: rgba(255, 255, 255, 0.8);
+    --gradient-primary: linear-gradient(135deg, var(--vibrant-violet), var(--vibrant-rose));
+    --gradient-soft: linear-gradient(135deg, var(--violet-soft), var(--rose-soft));
+    --font-sans: 'Space Grotesk', sans-serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.dark .glass-card,
+body.dark section,
+body.dark .navbar,
+body.dark footer {
+    background: rgba(30, 30, 40, 0.9);
+    color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    border-left: 6px solid var(--gold-accent);
+    padding-left: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+h2 i {
+    color: var(--vibrant-rose);
+    margin-right: 0.8rem;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: box-shadow 0.3s;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+
+.navbar.scrolled {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--vibrant-violet);
+}
+
+.logo .dot {
+    color: var(--vibrant-rose);
+}
+
+nav a {
+    margin-left: 2rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--vibrant-rose);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--vibrant-violet);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    border-radius: 3rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 8px 18px var(--shadow-violet);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px var(--vibrant-rose);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--vibrant-violet);
+    border: 2px solid var(--vibrant-rose);
+}
+
+.btn-outline:hover {
+    background: var(--gradient-soft);
+    color: white;
+    border-color: transparent;
+}
+
+/* ===== HERO ===== */
+.hero {
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--gold-accent);
+    color: var(--text-dark);
+    padding: 0.3rem 1.2rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 10vw, 5rem);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+.highlight {
+    color: var(--vibrant-violet);
+    font-weight: 600;
+}
+
+.hero-text {
+    max-width: 700px;
+    margin: 1.5rem auto;
+    font-size: 1.2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===== ABOUT ===== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.about-text p {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    background: rgba(255,255,255,0.6);
+    padding: 2rem;
+    border-radius: 2rem;
+    backdrop-filter: blur(5px);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--vibrant-violet);
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== SERVICES ===== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(6px);
+    border-radius: 2rem;
+    padding: 2rem 1.5rem;
+    border: 2px solid var(--border-light);
+    box-shadow: 0 15px 25px var(--shadow-violet);
+    transition: all 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-accent);
+    box-shadow: 0 25px 35px var(--shadow-rose);
+}
+
+.service-card i {
+    font-size: 2.8rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+}
+
+.service-card ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.service-card li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.service-card li i {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    color: var(--vibrant-rose);
+}
+
+/* ===== PORTFOLIO ===== */
+.portfolio-tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: white;
+    border: 2px solid var(--violet-soft);
+    padding: 0.7rem 1.5rem;
+    border-radius: 3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 1.5rem;
+    padding: 1.2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px var(--shadow-rose);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ===== PRICING ===== */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.price-card {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(6px);
+    border-radius: 2rem;
+    padding: 2rem;
+    text-align: center;
+    border: 2px solid white;
+    transition: transform 0.3s;
+}
+
+.price-card.featured {
+    transform: scale(1.05);
+    border: 3px solid var(--gold-accent);
+    box-shadow: 0 20px 40px var(--shadow-violet);
+}
+
+.price-card:hover {
+    transform: translateY(-8px);
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--vibrant-rose);
+    margin: 1rem 0;
+}
+
+.price-card ul {
+    list-style: none;
+    margin: 1.5rem 0;
+}
+
+.price-card li {
+    margin: 0.8rem 0;
+}
+
+/* ===== BLOG ===== */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.blog-card {
+    background: rgba(255,255,255,0.6);
+    border-radius: 2rem;
+    padding: 1.8rem;
+    transition: transform 0.3s;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.meta {
+    font-size: 0.9rem;
+    color: var(--vibrant-violet);
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--vibrant-rose);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ===== FAQ ===== */
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background: rgba(255,255,255,0.4);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    border-left: 6px solid var(--vibrant-rose);
+    transition: border-left-width 0.3s;
+}
+
+.faq-item:hover {
+    border-left-width: 12px;
+}
+
+.faq-question {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--vibrant-violet);
+}
+
+/* ===== NEWSLETTER ===== */
+.newsletter {
+    text-align: center;
+    background: rgba(255,255,255,0.5);
+    border-radius: 3rem;
+    padding: 3rem 2rem;
+    margin: 2rem 0;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.newsletter-form input {
+    padding: 1rem 1.5rem;
+    border-radius: 3rem;
+    border: 2px solid white;
+    width: 300px;
+    max-width: 100%;
+    font-size: 1rem;
+}
+
+/* ===== CONTACT ===== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.contact-form {
+    background: rgba(255,255,255,0.5);
+    border-radius: 2rem;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 2px solid white;
+    background: rgba(255,255,255,0.9);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--vibrant-violet);
+}
+
+.contact-info {
+    background: rgba(255,255,255,0.5);
+    border-radius: 2rem;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+}
+
+.contact-info p {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.contact-info i {
+    color: var(--vibrant-rose);
+    width: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 3rem 0 1rem;
+    margin-top: 3rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col h4 {
+    margin-bottom: 1rem;
+    color: var(--vibrant-violet);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-col a {
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.footer-col a:hover {
+    opacity: 1;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    font-size: 0.9rem;
+}
+
+.footer-bottom .separator {
+    margin: 0 1rem;
+    opacity: 0.5;
+}
+
+/* ===== BACK TO TOP & DARK MODE ===== */
+#back-to-top,
+#dark-mode-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s, opacity 0.3s;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dark-mode-toggle {
+    right: 100px;
+    background: var(--gold-accent);
+    color: var(--text-dark);
+}
+
+#back-to-top:hover,
+#dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
+
+#back-to-top.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+section.visible {
+    opacity: 1;
+}
+
+.pulse-glow {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 var(--vibrant-rose); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 123, 189, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 123, 189, 0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    nav {
+        margin-top: 1rem;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 0.5rem 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .price-card.featured {
+        transform: scale(1);
+    }
+
+    #back-to-top,
+    #dark-mode-toggle {
+        bottom: 20px;
+        width: 45px;
+        height: 45px;
+    }
+
+    #dark-mode-toggle {
+        right: 80px;
+    }
+}
+</style>
+<body>
+    <!-- Navbar -->
+     <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">NKOB45<span class="dot">.</span></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="menu-toggle" aria-label="menu"><i class="fas fa-bars"></i></button>
+    </header>
+    
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2><i class="fas fa-feather-alt"></i> About NKOB CREATORS</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p><strong>NKOB Creators was founded in 2020 with a clear vision:</strong> combine creativity, technology and storytelling to build meaningful digital experiences. Today we are a distributed a good team , working with clients from Stockholm to Sydney, from startups to Fortune 500 companies.</p>
+                    <p>Our approach is human‑centered: we listen first, then we prototype, then we refine. We believe technology should be beautiful, accessible and sustainable.</p>
+                    <p>We're proud to have contributed to projects that raised funds for social causes, helped launch innovative products, and preserved cultural heritage. Our clients include NGOs, luxury retailers, museums, music labels and tech companies.</p>
+                    <p>Beyond client work, we create personal projects: short films, generative art, and interactive installations. We also teach workshops and mentor young designers. In 2024 we launched the NOVA Fellowship, supporting five underrepresented artists.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item"><span class="stat-number">400+</span> <span class="stat-label">projects</span></div>
+                    <div class="stat-item"><span class="stat-number">1</span> <span class="stat-label">Yaaqoub</span></div>
+                    <div class="stat-item"><span class="stat-number">8</span> <span class="stat-label">countries</span></div>
+                    <div class="stat-item"><span class="stat-number">4</span> <span class="stat-label">years</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+     <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>NKOB CREATORS</h4>
+                    <p>Creative digital agency crafting meaningful experiences since 2020.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                   <ul>
+    <li><a href="privacy.html">Privacy policy</a></li>
+    <li><a href="terms.html">Terms of service</a></li>
+    <li><a href="cookies.html">Cookie policy</a></li>
+</ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                       <a href="https://www.instagram.com/rachid__yaaqoub?igsh=MWt0a3JtYXRseDl1Nw%3D%3D&utm_source=qr" aria-label="Instagram" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/share/1TvZvdenSx/?mibextid=wwXIfr" aria-label="Facebook" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://wa.me/212611073479" aria-label="WhatsApp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="mailto:rachidyaaqoub4@gmail.com" aria-label="Email" target="_blank">
+        <i class="fas fa-envelope"></i>
+    </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 NKOB CREATORS — All rights reserved. <span class="separator">|</span> <a href="#">Impressum</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Back to top button -->
+    <button id="back-to-top" title="Back to top">↑</button>
+
+    <!-- Dark mode toggle (optional) -->
+    <button id="dark-mode-toggle" title="Toggle dark mode">🌙</button>
+
+    <script>
+        // ===== NAVBAR SCROLL EFFECT =====
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// ===== MOBILE MENU TOGGLE =====
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+}
+
+// ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Close mobile menu after click
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+            }
+        }
+    });
+});
+
+// ===== INTERSECTION OBSERVER FOR FADE-IN ANIMATIONS =====
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+});
+
+// ===== PORTFOLIO TABS =====
+const tabBtns = document.querySelectorAll('.tab-btn');
+const websitesDiv = document.getElementById('websites');
+const editingDiv = document.getElementById('editing');
+const threedDiv = document.getElementById('3d');
+
+function activateTab(tabId) {
+    // Hide all
+    if (websitesDiv) websitesDiv.style.display = 'none';
+    if (editingDiv) editingDiv.style.display = 'none';
+    if (threedDiv) threedDiv.style.display = 'none';
+
+    // Show selected
+    if (tabId === 'websites' && websitesDiv) websitesDiv.style.display = 'grid';
+    else if (tabId === 'editing' && editingDiv) editingDiv.style.display = 'grid';
+    else if (tabId === '3d' && threedDiv) threedDiv.style.display = 'grid';
+
+    // Update active class on buttons
+    tabBtns.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.tab === tabId) {
+            btn.classList.add('active');
+        }
+    });
+}
+
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+});
+
+// Activate default tab (websites) on load
+activateTab('websites');
+
+// ===== FAQ ACCORDION (optional: if you want click instead of hover) =====
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+        item.classList.toggle('active');
+    });
+});
+
+// ===== NEWSLETTER FORM =====
+const newsletterForm = document.querySelector('.newsletter-form');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = newsletterForm.querySelector('input[type="email"]').value;
+        if (email) {
+            alert(`Thank you for subscribing! We'll send updates to ${email}`);
+            newsletterForm.reset();
+        } else {
+            alert('Please enter a valid email address.');
+        }
+    });
+}
+
+// ===== CONTACT FORM =====
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name')?.value;
+        const email = document.getElementById('email')?.value;
+        const message = document.getElementById('message')?.value;
+        if (name && email && message) {
+            alert(`Thank you ${name}! Your message has been sent. We'll get back to you soon.`);
+            contactForm.reset();
+        } else {
+            alert('Please fill in all required fields.');
+        }
+    });
+}
+
+// ===== BACK TO TOP BUTTON =====
+const backToTop = document.getElementById('back-to-top');
+if (backToTop) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            backToTop.classList.remove('hidden');
+        } else {
+            backToTop.classList.add('hidden');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// ===== DARK MODE TOGGLE =====
+const darkToggle = document.getElementById('dark-mode-toggle');
+if (darkToggle) {
+    darkToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        const icon = darkToggle.querySelector('i');
+        if (document.body.classList.contains('dark')) {
+            darkToggle.innerHTML = '☀️';
+        } else {
+            darkToggle.innerHTML = '🌙';
+        }
+    });
+}
+
+// ===== STATS COUNTER (simple animation) =====
+const stats = document.querySelectorAll('.stat-number');
+const animateStats = () => {
+    stats.forEach(stat => {
+        const target = parseInt(stat.innerText.replace(/[^0-9]/g, ''), 10);
+        if (isNaN(target)) return;
+        let current = 0;
+        const increment = target / 50;
+        const update = () => {
+            current += increment;
+            if (current < target) {
+                stat.innerText = Math.ceil(current) + '+';
+                requestAnimationFrame(update);
+            } else {
+                stat.innerText = target + '+';
+            }
+        };
+        update();
+    });
+};
+
+// Trigger stats animation when stats section is visible
+const statsSection = document.querySelector('.about-stats');
+if (statsSection) {
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateStats();
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    statsObserver.observe(statsSection);
+}
+
+// ===== ADD MENU TOGGLE BUTTON IF NOT EXISTS (for mobile) =====
+if (!menuToggle && window.innerWidth <= 768) {
+    const toggle = document.createElement('button');
+    toggle.className = 'menu-toggle';
+    toggle.innerHTML = '<i class="fas fa-bars"></i>';
+    document.querySelector('.navbar').appendChild(toggle);
+    toggle.addEventListener('click', () => {
+        document.querySelector('nav').classList.toggle('active');
+    });
+}
+    </script>
+</body>
+</html>
