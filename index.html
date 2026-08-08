@@ -28,54 +28,196 @@
   </header>
 
   <main>
-    <section class="hero container">
+    <!-- Premium hero -->
+    <section class="hero container" aria-label="Hero">
       <div class="hero-card">
         <div class="h-badge">Premium Studio</div>
-        <h1 class="h-title">Transforming visions into modern digital reality</h1>
-        <p class="h-lead">We blend design, 3D visualization and storytelling to craft immersive, conversion-focused digital experiences.</p>
+        <h1 class="h-title">We build digital experiences for businesses, creators and tourism projects.</h1>
+        <p class="h-lead">NKOB-CREATORS blends web design, 3D visualization, motion and strategy to create websites and campaigns that convert — built with speed, accessibility and aesthetics in mind.</p>
         <div class="h-actions">
           <a class="btn btn-primary" href="contact.html">Start a project</a>
           <a class="btn btn-light" href="portfolio.html">View portfolio</a>
         </div>
         <p class="small" style="margin-top:18px">Contact — <a href="mailto:rachidyaaqoub4@gmail.com">rachidyaaqoub4@gmail.com</a> • <a href="https://wa.me/212611073479">+212 611 073 479</a></p>
+        <div class="hero-features">
+          <div class="kicker">Featured services</div>
+          <div class="feature-list">
+            <span>Custom websites</span>
+            <span>Tourism & booking</span>
+            <span>Brand identity</span>
+            <span>3D visualization</span>
+            <span>Video & motion</span>
+          </div>
+        </div>
       </div>
-      <aside class="stats">
-        <div class="stat"><div class="num">400+</div><div class="label">projects</div></div>
-        <div class="stat"><div class="num">8</div><div class="label">countries</div></div>
-        <div class="stat"><div class="num">4</div><div class="label">years experience</div></div>
-        <div class="stat"><div class="num">1</div><div class="label">founder</div></div>
+
+      <aside class="stats" aria-hidden="false">
+        <div class="stat">
+          <div class="num">400+</div>
+          <div class="label">Projects delivered</div>
+        </div>
+        <div class="stat">
+          <div class="num">8</div>
+          <div class="label">Countries served</div>
+        </div>
+        <div class="stat">
+          <div class="num">4</div>
+          <div class="label">Years experience</div>
+        </div>
+        <div class="stat">
+          <div class="num">1</div>
+          <div class="label">Founder-led studio</div>
+        </div>
       </aside>
     </section>
 
-    <section class="section container">
-      <h2>Services</h2>
+    <!-- Services overview -->
+    <section class="section container" id="services-overview">
+      <h2>What we do</h2>
+      <p class="small">From startup landing pages to tourism booking platforms and immersive product visuals — we offer end-to-end creative and technical services.</p>
       <div class="grid">
         <article class="card">
-          <h3>Web Design & Development</h3>
-          <p>Create high-performance responsive websites tailored to your brand and audience.</p>
+          <h3>Website design & development</h3>
+          <p>Fast, responsive websites with clear sign-up and conversion funnels. Performance-first, SEO-ready and tailored to your brand.</p>
         </article>
         <article class="card">
-          <h3>3D Visualization</h3>
-          <p>Photoreal renders, product visuals and immersive WebGL experiences to wow your users.</p>
+          <h3>Branding & identity</h3>
+          <p>Name, logo, visual systems and brand guidelines that help you stand out and scale communications.</p>
         </article>
         <article class="card">
-          <h3>Video & Motion</h3>
-          <p>From concept to post — cinematic promo videos, social snippets and animations.</p>
+          <h3>Video & motion</h3>
+          <p>Promotional videos, product cutaways and social edits designed to amplify your message across platforms.</p>
         </article>
         <article class="card">
-          <h3>Brand & Strategy</h3>
-          <p>Positioning, identity and digital strategy to turn attention into business results.</p>
+          <h3>3D & visualization</h3>
+          <p>Photoreal renders, VR-ready assets and interactive visuals for tourism, products and architecture.</p>
         </article>
+      </div>
+
+      <div class="featured-services">
+        <h3>Featured services</h3>
+        <div class="grid">
+          <div class="card">
+            <h4>Tourism & Booking Websites</h4>
+            <p>Custom reservation flows, availability calendars and multilingual support for tourism operators.</p>
+          </div>
+          <div class="card">
+            <h4>WordPress & CMS</h4>
+            <p>Flexible CMS solutions for teams — fast editors, SEO tools and maintenance packages.</p>
+          </div>
+          <div class="card">
+            <h4>Local SEO & Google Business</h4>
+            <p>Improve local visibility with optimized listings, Maps presence and content tuned for Moroccan and regional search.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section container">
-      <h2>Featured Work</h2>
+    <!-- Portfolio showcase -->
+    <section class="section container" id="portfolio-preview">
+      <h2>Portfolio showcase</h2>
+      <p class="small">Selected work — labeled as featured projects and concepts. Live links and case studies available on the Portfolio page.</p>
       <div class="work-grid">
-        <a class="project" href="portfolio.html"><img src="img.jpg" alt="Featured project"><div class="meta">View project</div></a>
-        <a class="project" href="portfolio.html"><img src="img.jpg" alt="Featured project"><div class="meta">View project</div></a>
-        <a class="project" href="portfolio.html"><img src="img.jpg" alt="Featured project"><div class="meta">View project</div></a>
+        <a class="project" href="portfolio.html#project-demo-1"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%' height='100%' fill='%2308162a'/><text x='50%' y='50%' fill='%23ffffff' font-family='Inter, Arial' font-size='32' text-anchor='middle'>Featured Project — Demo</text></svg>" alt="Featured Project Demo"><div class="meta">Featured Project — Demo</div></a>
+        <a class="project" href="portfolio.html#project-demo-2"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%' height='100%' fill='%2311182f'/><text x='50%' y='50%' fill='%23ffffff' font-family='Inter, Arial' font-size='32' text-anchor='middle'>Tourism Website — Sample</text></svg>" alt="Tourism Website Sample"><div class="meta">Tourism Website — Sample</div></a>
+        <a class="project" href="portfolio.html#project-demo-3"><img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%' height='100%' fill='%2308162a'/><text x='50%' y='50%' fill='%23ffffff' font-family='Inter, Arial' font-size='32' text-anchor='middle'>Brand Identity — Concept</text></svg>" alt="Brand Identity Concept"><div class="meta">Brand Identity — Concept</div></a>
       </div>
+    </section>
+
+    <!-- Why choose us + numbers -->
+    <section class="section container" id="why-us">
+      <h2>Why choose NKOB-CREATORS</h2>
+      <div class="grid">
+        <div>
+          <p>We are a founder-led studio combining creative direction with hands-on technical delivery. That means faster decisions, consistent quality, and a single point of contact from strategy to launch.</p>
+          <ul class="benefits">
+            <li>Founder-led & experienced</li>
+            <li>End-to-end delivery (design, code, content, media)</li>
+            <li>Performance & accessibility focused</li>
+            <li>Local expertise for Moroccan and regional tourism</li>
+          </ul>
+        </div>
+        <aside>
+          <div class="card">
+            <h3>Our numbers</h3>
+            <div class="stat-row">
+              <div class="stat"><div class="num">400+</div><div class="label">Projects</div></div>
+              <div class="stat"><div class="num">98%</div><div class="label">Client satisfaction</div></div>
+            </div>
+            <div style="height:12px"></div>
+            <div class="stat-row">
+              <div class="stat"><div class="num">24</div><div class="label">Team freelancers</div></div>
+              <div class="stat"><div class="num">4+</div><div class="label">Years active</div></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section container" id="process">
+      <h2>How we work</h2>
+      <p class="small">A simple, transparent process keeps projects on time and on budget.</p>
+      <div class="process-grid">
+        <div class="process-step"><strong>1. Discover</strong><p>We learn your goals, users and constraints.</p></div>
+        <div class="process-step"><strong>2. Plan</strong><p>Information architecture, scope and roadmap.</p></div>
+        <div class="process-step"><strong>3. Design</strong><p>UI, brand and motion prototypes for feedback.</p></div>
+        <div class="process-step"><strong>4. Build</strong><p>Responsive, SEO-friendly implementation and testing.</p></div>
+        <div class="process-step"><strong>5. Launch</strong><p>Deployment, analytics and training.</p></div>
+        <div class="process-step"><strong>6. Support</strong><p>Maintenance, updates and growth strategies.</p></div>
+      </div>
+    </section>
+
+    <!-- Technologies -->
+    <section class="section container" id="tech">
+      <h2>Tools & technologies</h2>
+      <p class="small">We work with modern tools to deliver reliable, maintainable products.</p>
+      <div class="logos-grid" aria-hidden="false">
+        <div class="logo-item" title="HTML5">HTML5</div>
+        <div class="logo-item" title="CSS3">CSS3</div>
+        <div class="logo-item" title="JavaScript">JavaScript</div>
+        <div class="logo-item" title="WordPress">WordPress</div>
+        <div class="logo-item" title="GitHub">GitHub</div>
+        <div class="logo-item" title="Google">Google</div>
+        <div class="logo-item" title="Canva">Canva</div>
+        <div class="logo-item" title="Adobe">Adobe</div>
+        <div class="logo-item" title="Blender">Blender</div>
+      </div>
+      <p class="small small-muted">Presented as "Tools & Technologies" — these are tools we use, not clients or partners.</p>
+    </section>
+
+    <!-- Testimonials & FAQ -->
+    <section class="section container" id="testimonials">
+      <h2>Testimonials</h2>
+      <div class="grid">
+        <div class="card">
+          <p>"NKOB-CREATORS rebuilt our tourism website and doubled bookings in 3 months. Responsive, thoughtful and fast."</p>
+          <p class="small">— Sample Owner (labelled sample)</p>
+        </div>
+        <div class="card">
+          <p>"Smooth process and beautiful design — the brand identity helped us relaunch with confidence."</p>
+          <p class="small">— Demo Client (sample)</p>
+        </div>
+      </div>
+      <div style="height:18px"></div>
+      <h3>FAQ</h3>
+      <div class="faq">
+        <details>
+          <summary>How long does a typical website project take?</summary>
+          <div class="small">Small sites: 2–4 weeks. Business sites: 4–8 weeks. Complex platforms: 8+ weeks — timelines depend on scope and content readiness.</div>
+        </details>
+        <details>
+          <summary>Do you offer maintenance and support after launch?</summary>
+          <div class="small">Yes — we provide monthly maintenance plans including updates, backups and small content changes.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA & Contact -->
+    <section class="section container center" id="cta-contact">
+      <h2>Ready to start?</h2>
+      <p class="small">Tell us about your project and we'll propose a clear plan and estimate.</p>
+      <a class="btn btn-primary" href="contact.html">Get a custom quote</a>
     </section>
 
   </main>
@@ -85,22 +227,23 @@
       <div class="foot-grid">
         <div>
           <strong>NKOB45 CREATORS</strong>
-          <p class="small">Premium creative studio — web, 3D and motion.</p>
+          <p class="small">Premium creative studio — web, 3D and motion. Founder-led, remote-first, Morocco-based.</p>
         </div>
         <div>
-          <strong>Navigate</strong>
+          <strong>Quick links</strong>
           <nav class="small">
             <a href="index.html">Home</a><br>
             <a href="about.html">About</a><br>
-            <a href="services.html">Services</a>
+            <a href="services.html">Services</a><br>
+            <a href="portfolio.html">Portfolio</a>
           </nav>
         </div>
         <div>
-          <strong>Legal</strong>
+          <strong>Services</strong>
           <nav class="small">
-            <a href="privacy.html">Privacy</a><br>
-            <a href="terms.html">Terms</a><br>
-            <a href="cookies.html">Cookies</a>
+            <a href="services.html">Websites</a><br>
+            <a href="services.html#seo">SEO</a><br>
+            <a href="services.html#branding">Branding</a>
           </nav>
         </div>
         <div>
