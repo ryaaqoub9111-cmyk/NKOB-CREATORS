@@ -1,796 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>NKOB45 CREATORS | Premium Digital Agency & 3D Visualization |NKOB CREATORS</title>
-    <meta name="description" content="NKOB45 is an international creative studio specializing in web design, 3D visualization, video production, and interactive experiences. We help brands tell their stories.">
-    <meta name="keywords" content="creative agency, web design, 3D visualization, video production, digital strategy, branding, WebGL, interactive experiences">
-    <meta name="author" content="NKOB45 Studio">
-    <link rel="canonical" href="https://www.nkob45.com">
-    <meta property="og:title" content="NKOB45 CREATORS - Premium Digital Agency">
-    <meta property="og:description" content="Crafting extraordinary digital experiences that transform brands.">
-    <meta property="og:image" content="img.jpg">
-    <meta property="og:url" content="https://www.nkob45.com/">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #00f0ff;
-            --secondary: #ff006e;
-            --accent: #ffb703;
-            --dark-bg: #0a0e27;
-            --card-bg: rgba(20, 24, 50, 0.8);
-            --text-light: #f0f2f5;
-            --text-muted: #a0a3a8;
-            --border-color: rgba(0, 240, 255, 0.15);
-            --shadow-sm: 0 4px 12px rgba(0, 240, 255, 0.08);
-            --shadow-md: 0 12px 32px rgba(0, 240, 255, 0.15);
-            --shadow-lg: 0 20px 60px rgba(0, 240, 255, 0.2);
-            --font-display: 'Syne', sans-serif;
-            --font-body: 'Inter', sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #0f1530 50%, #0a0e27 100%);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 120px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes floatIn {
-            from {
-                opacity: 0;
-                transform: translateY(50px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        @keyframes glowPulse {
-            0%, 100% {
-                box-shadow: 0 0 20px rgba(0, 240, 255, 0.5), inset 0 0 20px rgba(0, 240, 255, 0.1);
-            }
-            50% {
-                box-shadow: 0 0 40px rgba(0, 240, 255, 0.8), inset 0 0 30px rgba(0, 240, 255, 0.2);
-            }
-        }
-
-        @keyframes slideRight {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .scroll-fade {
-            animation: fadeInUp 0.8s ease forwards;
-            opacity: 0;
-        }
-
-        .scroll-fade.visible {
-            opacity: 1;
-        }
-
-        /* ===== NAVBAR ===== */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 5%;
-            background: rgba(10, 14, 39, 0.8);
-            backdrop-filter: blur(20px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            box-shadow: var(--shadow-lg);
-            background: rgba(10, 14, 39, 0.95);
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: 800;
-            font-family: var(--font-display);
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -1px;
-        }
-
-        nav {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-
-        /* ===== BUTTONS ===== */
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            font-size: 0.95rem;
-            text-align: center;
-            font-family: var(--font-body);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--dark-bg);
-            box-shadow: var(--shadow-md);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.3s ease;
-        }
-
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: rgba(0, 240, 255, 0.1);
-            border-color: var(--secondary);
-            color: var(--secondary);
-            transform: translateY(-2px);
-        }
-
-        /* ===== HERO ===== */
-        .hero {
-            text-align: center;
-            padding-top: 140px;
-            padding-bottom: 140px;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: floatIn 1s ease;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255, 6, 110, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid var(--border-color);
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 0.6s ease;
-        }
-
-        .hero h1 {
-            font-size: clamp(3.5rem, 8vw, 5.5rem);
-            font-family: var(--font-display);
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease 0.1s backwards;
-            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--primary));
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.4rem;
-            margin: 1.5rem 0;
-            color: var(--text-light);
-            animation: fadeInUp 0.8s ease 0.2s backwards;
-        }
-
-        .hero-text {
-            max-width: 700px;
-            margin: 2rem auto;
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            line-height: 1.8;
-            animation: fadeInUp 0.8s ease 0.3s backwards;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 3rem;
-            animation: fadeInUp 0.8s ease 0.4s backwards;
-        }
-
-        /* ===== SECTION TITLES ===== */
-        h2 {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-family: var(--font-display);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 3rem;
-            letter-spacing: -1px;
-        }
-
-        /* ===== GRID LAYOUTS ===== */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        /* ===== CARDS ===== */
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2.5rem 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-lg), inset 0 0 30px rgba(0, 240, 255, 0.05);
-        }
-
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            font-family: var(--font-display);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
-        .card ul {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .card li {
-            padding: 0.6rem 0;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .card li::before {
-            content: '✓';
-            margin-right: 0.8rem;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        /* ===== PRICING ===== */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .price-card {
-            background: var(--card-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .price-card.featured {
-            border-color: var(--primary);
-            transform: scale(1.05);
-            box-shadow: 0 0 40px rgba(0, 240, 255, 0.3);
-        }
-
-        .price-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--secondary);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .price-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .price {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 1.5rem 0;
-        }
-
-        .price-card ul {
-            list-style: none;
-            text-align: left;
-            margin: 2rem 0;
-            flex-grow: 1;
-        }
-
-        .price-card li {
-            padding: 0.7rem 0;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .price-card li::before {
-            content: '→';
-            margin-right: 0.8rem;
-            color: var(--primary);
-        }
-
-        .price-card .btn {
-            margin-top: auto;
-            width: 100%;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: rgba(10, 14, 39, 0.9);
-            border-top: 1px solid var(--border-color);
-            padding: 4rem 0 1rem;
-            margin-top: 4rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-col h4 {
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-col a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-col a:hover {
-            color: var(--primary);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
-            color: var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--dark-bg);
-            border-color: var(--primary);
-            transform: translateY(-4px);
-        }
-
-        /* ===== UTILITIES ===== */
-        #back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--dark-bg);
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 99;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        #back-to-top.visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        #back-to-top:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 0 40px rgba(0, 240, 255, 0.5);
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-            }
-
-            nav {
-                display: none;
-                flex-direction: column;
-                gap: 1rem;
-                width: 100%;
-            }
-
-            nav.active {
-                display: flex;
-            }
-
-            nav a {
-                padding: 0.5rem 0;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            section {
-                padding: 80px 0;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .price-card.featured {
-                transform: scale(1);
-            }
-
-            #back-to-top {
-                width: 45px;
-                height: 45px;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NKOB45 CREATORS — Premium Creative Studio</title>
+  <meta name="description" content="NKOB45 CREATORS — premium digital agency specializing in web design, 3D, video and immersive experiences.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="logo">NKOB45</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="blog.html">Blog</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <button class="menu-toggle" aria-label="menu"><i class="fas fa-bars"></i></button>
-    </header>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand"><div class="logo">NKOB45</div><div class="small">Creators</div></div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a class="cta" href="contact.html">Get started</a>
+      </nav>
+      <button class="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <span class="badge">✨ PREMIUM CREATIVE STUDIO</span>
-            <h1>Transforming Visions Into Digital Reality</h1>
-            <p class="hero-subtitle">Next-generation creative experiences that captivate, engage, and convert.</p>
-            <p class="hero-text">We craft immersive digital experiences combining cutting-edge technology with artistic excellence. From concept to execution, every pixel tells your story.</p>
-            <div class="hero-buttons">
-                <a href="contact.html" class="btn btn-primary">🚀 Start Your Project</a>
-                <a href="portfolio.html" class="btn btn-outline">View Our Work</a>
-            </div>
+  <main>
+    <section class="hero container">
+      <div class="hero-card">
+        <div class="h-badge">Premium Studio</div>
+        <h1 class="h-title">Transforming visions into modern digital reality</h1>
+        <p class="h-lead">We blend design, 3D visualization and storytelling to craft immersive, conversion-focused digital experiences.</p>
+        <div class="h-actions">
+          <a class="btn btn-primary" href="contact.html">Start a project</a>
+          <a class="btn btn-light" href="portfolio.html">View portfolio</a>
         </div>
+        <p class="small" style="margin-top:18px">Contact — <a href="mailto:rachidyaaqoub4@gmail.com">rachidyaaqoub4@gmail.com</a> • <a href="https://wa.me/212611073479">+212 611 073 479</a></p>
+      </div>
+      <aside class="stats">
+        <div class="stat"><div class="num">400+</div><div class="label">projects</div></div>
+        <div class="stat"><div class="num">8</div><div class="label">countries</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">years experience</div></div>
+        <div class="stat"><div class="num">1</div><div class="label">founder</div></div>
+      </aside>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>NKOB45</h4>
-                    <p>Premium creative studio crafting extraordinary digital experiences since 2020.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Navigate</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Service</a></li>
-                        <li><a href="cookies.html">Cookie Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Connect</h4>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/rachid__yaaqoub" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/1TvZvdenSx/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://wa.me/212611073479" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:rachidyaaqoub4@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 NKOB45 CREATORS — All rights reserved | Crafted with precision</p>
-            </div>
+    <section class="section container">
+      <h2>Services</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Web Design & Development</h3>
+          <p>Create high-performance responsive websites tailored to your brand and audience.</p>
+        </article>
+        <article class="card">
+          <h3>3D Visualization</h3>
+          <p>Photoreal renders, product visuals and immersive WebGL experiences to wow your users.</p>
+        </article>
+        <article class="card">
+          <h3>Video & Motion</h3>
+          <p>From concept to post — cinematic promo videos, social snippets and animations.</p>
+        </article>
+        <article class="card">
+          <h3>Brand & Strategy</h3>
+          <p>Positioning, identity and digital strategy to turn attention into business results.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2>Featured Work</h2>
+      <div class="work-grid">
+        <a class="project" href="portfolio.html"><img src="img.jpg" alt="Featured project"><div class="meta">View project</div></a>
+        <a class="project" href="portfolio.html"><img src="img.jpg" alt="Featured project"><div class="meta">View project</div></a>
+        <a class="project" href="portfolio.html"><img src="img.jpg" alt="Featured project"><div class="meta">View project</div></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <strong>NKOB45 CREATORS</strong>
+          <p class="small">Premium creative studio — web, 3D and motion.</p>
         </div>
-    </footer>
+        <div>
+          <strong>Navigate</strong>
+          <nav class="small">
+            <a href="index.html">Home</a><br>
+            <a href="about.html">About</a><br>
+            <a href="services.html">Services</a>
+          </nav>
+        </div>
+        <div>
+          <strong>Legal</strong>
+          <nav class="small">
+            <a href="privacy.html">Privacy</a><br>
+            <a href="terms.html">Terms</a><br>
+            <a href="cookies.html">Cookies</a>
+          </nav>
+        </div>
+        <div>
+          <strong>Connect</strong>
+          <div class="small">
+            <a href="https://www.instagram.com/rachid__yaaqoub" target="_blank">Instagram</a><br>
+            <a href="https://www.facebook.com/share/1TvZvdenSx/" target="_blank">Facebook</a><br>
+            <a href="https://wa.me/212611073479" target="_blank">WhatsApp</a><br>
+            <a href="mailto:rachidyaaqoub4@gmail.com">Email</a>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:24px;text-align:center;color:var(--muted);font-size:0.95rem">© 2026 NKOB45 CREATORS — All rights reserved</div>
+    </div>
+  </footer>
 
-    <button id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
-
-    <script>
-        // Navbar scroll effect
-        const navbar = document.querySelector('.navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav');
-        if (menuToggle) {
-            menuToggle.addEventListener('click', () => {
-                nav.classList.toggle('active');
-            });
-        }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    if (nav && nav.classList.contains('active')) {
-                        nav.classList.remove('active');
-                    }
-                }
-            });
-        });
-
-        // Scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.scroll-fade').forEach(el => observer.observe(el));
-
-        // Back to top button
-        const backToTop = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
+  <button id="back-to-top" aria-label="Back to top" style="position:fixed;right:18px;bottom:18px;padding:12px;border-radius:999px;border:0;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#071025;display:none">↑</button>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
