@@ -4,25 +4,130 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Portfolio — NKOB45 CREATORS</title>
-  <meta name="description" content="Showcase of NKOB45 projects">
+  <meta name="description" content="NKOB-CREATORS portfolio — web development, photography, graphic design, video and branding samples.">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header class="header"><div class="container header-inner"><div class="brand"><div class="logo">NKOB45</div></div><nav class="nav"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a></nav><button class="burger">☰</button></div></header>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand"><div class="logo">NKOB45</div><div class="small">Creators</div></div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html" aria-current="page">Portfolio</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a class="cta" href="contact.html">Get started</a>
+      </nav>
+      <button class="burger" aria-label="Open menu">☰</button>
+    </div>
+  </header>
 
   <main class="container">
     <section class="section">
-      <h2>Our Portfolio</h2>
-      <div class="work-grid">
-        <a class="project" href="#"><img src="img.jpg" alt="Project"><div class="meta">Project One</div></a>
-        <a class="project" href="#"><img src="img.jpg" alt="Project"><div class="meta">Project Two</div></a>
-        <a class="project" href="#"><img src="img.jpg" alt="Project"><div class="meta">Project Three</div></a>
-        <a class="project" href="#"><img src="img.jpg" alt="Project"><div class="meta">Project Four</div></a>
+      <h2>Portfolio</h2>
+      <p class="small">Selected projects across Web Development, Photography, Graphic Design, Video, Branding, Tourism and Digital. Where real client work is not available, projects are clearly labelled as Sample, Concept or Demo.</p>
+
+      <div class="portfolio-controls" role="tablist" aria-label="Portfolio filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="photo">Photography</button>
+        <button class="filter-btn" data-filter="design">Graphic Design</button>
+        <button class="filter-btn" data-filter="video">Video</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+        <button class="filter-btn" data-filter="tourism">Tourism</button>
+        <button class="filter-btn" data-filter="digital">Digital</button>
       </div>
+
+      <div class="work-grid" id="portfolio-grid">
+        <!-- Web Development sample -->
+        <article class="project" data-category="web">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%' height='100%' fill='%23111a2b'/><text x='50%' y='48%' fill='%23ffffff' font-family='Inter, Arial' font-size='26' text-anchor='middle'>Riad Booking Demo — Web (Sample)</text><text x='50%' y='60%' fill='%23aaaaaa' font-family='Inter, Arial' font-size='14' text-anchor='middle'>Custom booking flow, calendar & multilingual</text></svg>" alt="Riad Booking Demo — Web Development"><div class="meta">Riad Booking Demo — Web (Sample)</div>
+          <div class="card" style="margin:12px">
+            <h4>Riad Booking — Demo</h4>
+            <p class="small">Sample web development project: reservation flow, calendar integration and performance-first UI. Labeled as Sample.</p>
+            <a class="btn btn-light" href="#">View project</a>
+          </div>
+        </article>
+
+        <!-- Photography sample -->
+        <article class="project" data-category="photo">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%' height='100%' fill='%2312182b'/><text x='50%' y='50%' fill='%23ffffff' font-family='Inter, Arial' font-size='28' text-anchor='middle'>Chefchaouen Photography Series (Concept)</text></svg>" alt="Chefchaouen Photography Series"><div class="meta">Chefchaouen Photography — Concept</div>
+          <div class="card" style="margin:12px">
+            <h4>Chefchaouen Photography — Concept</h4>
+            <p class="small">A photography concept series focusing on landscapes, local life and architecture. Labelled as Concept.</p>
+            <a class="btn btn-light" href="#">View gallery</a>
+          </div>
+        </article>
+
+        <!-- Graphic Design sample -->
+        <article class="project" data-category="design">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%' height='100%' fill='%23121b2f'/><text x='50%' y='50%' fill='%23ffffff' font-family='Inter, Arial' font-size='26' text-anchor='middle'>Social Campaign — Poster Series (Sample)</text></svg>" alt="Social Campaign Poster Series"><div class="meta">Social Campaign — Poster (Sample)</div>
+          <div class="card" style="margin:12px">
+            <h4>Social Campaign — Posters</h4>
+            <p class="small">Sample graphic design series for social and print: posters, social templates and advertising assets.</p>
+            <a class="btn btn-light" href="#">View assets</a>
+          </div>
+        </article>
+
+        <!-- Video sample -->
+        <article class="project" data-category="video">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%' height='100%' fill='%23131b2c'/><text x='50%' y='50%' fill='%23ffffff' font-family='Inter, Arial' font-size='26' text-anchor='middle'>Promotional Video — Hotel (Demo)</text></svg>" alt="Promotional Video Hotel"><div class="meta">Promotional Video — Hotel (Demo)</div>
+          <div class="card" style="margin:12px">
+            <h4>Hotel Promo — Demo</h4>
+            <p class="small">Short-form promotional video sample, ideal for social and web use. Labeled as Demo.</p>
+            <a class="btn btn-light" href="#">View video</a>
+          </div>
+        </article>
+
+        <!-- Branding sample -->
+        <article class="project" data-category="branding">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%' height='100%' fill='%230f1626'/><text x='50%' y='50%' fill='%23ffffff' font-family='Inter, Arial' font-size='26' text-anchor='middle'>Brand Identity — Artisan Studio (Sample)</text></svg>" alt="Brand Identity Artisan Studio"><div class="meta">Brand Identity — Artisan Studio (Sample)</div>
+          <div class="card" style="margin:12px">
+            <h4>Artisan Studio — Brand</h4>
+            <p class="small">Logo, color system and visual guidelines for a local artisan studio. Sample project.</p>
+            <a class="btn btn-light" href="#">View brand</a>
+          </div>
+        </article>
+
+        <!-- Tourism sample -->
+        <article class="project" data-category="tourism">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%' height='100%' fill='%2310222d'/><text x='50%' y='50%' fill='%23ffffff' font-family='Inter, Arial' font-size='26' text-anchor='middle'>Coastal Tour Landing — Essaouira (Sample)</text></svg>" alt="Coastal Tour Landing"><div class="meta">Coastal Tour Landing — Essaouira (Sample)</div>
+          <div class="card" style="margin:12px">
+            <h4>Coastal Tours — Landing</h4>
+            <p class="small">Sample landing for coastal tour operator with booking CTA, itinerary and gallery.</p>
+            <a class="btn btn-light" href="#">View landing</a>
+          </div>
+        </article>
+
+        <!-- Digital sample -->
+        <article class="project" data-category="digital">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'><rect width='100%' height='100%' fill='%23101826'/><text x='50%' y='50%' fill='%23ffffff' font-family='Inter, Arial' font-size='26' text-anchor='middle'>SEO & Local Optimisation — Sample</text></svg>" alt="SEO Local Optimization"><div class="meta">SEO & Local Optimisation — Sample</div>
+          <div class="card" style="margin:12px">
+            <h4>Local SEO — Sample</h4>
+            <p class="small">Sample campaign showing on-page, Google Business and local citation strategy for a local business.</p>
+            <a class="btn btn-light" href="#">View case</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div style="height:18px"></div>
+      <p class="small">Want to see a case study for a specific service? Use the contact form to request detailed case studies or send us a brief.</p>
     </section>
   </main>
 
-  <footer class="footer"><div class="container foot-grid"><div><strong>NKOB45 CREATORS</strong><p class="small">Selected works</p></div><div><strong>Contact</strong><div class="small"><a href="mailto:rachidyaaqoub4@gmail.com">Email</a></div></div></div></footer>
+  <footer class="footer">
+    <div class="container foot-grid">
+      <div><strong>NKOB45 CREATORS</strong><p class="small">Multidisciplinary creative studio — code, design, photography and video.</p></div>
+      <div><strong>Navigate</strong><div class="small"><a href="index.html">Home</a><br><a href="services.html">Services</a></div></div>
+      <div><strong>Contact</strong><div class="small"><a href="mailto:rachidyaaqoub4@gmail.com">Email</a><br><a href="https://wa.me/212611073479">WhatsApp</a></div></div>
+      <div><strong>Legal</strong><div class="small"><a href="privacy.html">Privacy</a><br><a href="terms.html">Terms</a></div></div>
+    </div>
+  </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
