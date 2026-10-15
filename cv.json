@@ -1,6 +1,0 @@
-{
-  "_help": "Aucun CV n'a été fourni : ces listes sont vides, donc la section « Parcours » n'est pas affichée. Ajoutez vos vraies informations puis lancez : python3 tools/build.py",
-  "experience": [],
-  "formation": [],
-  "cv_pdf": ""
-}
