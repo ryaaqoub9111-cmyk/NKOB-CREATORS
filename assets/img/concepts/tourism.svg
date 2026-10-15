@@ -6,4 +6,4 @@
 <rect width="1200" height="800" fill="#0f0820"/><rect width="1200" height="800" fill="url(#g)" opacity=".55"/>
 <circle cx="980" cy="120" r="230" fill="#ff5fa2" opacity=".28" filter="url(#b)"/><circle cx="160" cy="720" r="260" fill="#5b3df5" opacity=".4" filter="url(#b)"/>
 <circle cx="600" cy="330" r="150" fill="url(#a)"/><path d="M0 560 Q200 430 420 540 T820 520 T1200 500 V800 H0Z" fill="#2a1050"/><path d="M0 640 Q260 540 520 630 T1200 590 V800 H0Z" fill="#150c2c"/><rect x="430" y="150" width="340" height="64" rx="32" fill="#0f0820" fill-opacity=".55" stroke="#fff" stroke-opacity=".3"/><rect x="460" y="172" width="180" height="14" rx="7" fill="#fff"/><circle cx="730" cy="182" r="13" fill="url(#c)"/><g fill="#fff" fill-opacity=".85"><circle cx="300" cy="610" r="7"/><circle cx="880" cy="640" r="5"/></g>
-<text x="48" y="764" fill="#fff" fill-opacity=".7" font-family="Georgia,serif" font-style="italic" font-size="26">Concept — page d'atterrissage tourisme (non client)</text></svg>
+<text x="48" y="764" fill="#fff" fill-opacity=".7" font-family="Georgia,serif" font-style="italic" font-size="26">Concept — tourism landing page (not a client project)</text></svg>

@@ -1,56 +1,56 @@
-/* Données du portfolio. Pour ajouter un VRAI projet :
-   1) copiez l'image dans assets/media/ (ex. assets/media/mon-projet.webp, ratio 3:2 conseillé, ~1200×800)
-   2) ajoutez un objet dans "projects" (voir l'exemple commenté plus bas)
-   3) pour une vidéo : ajoutez "video": "assets/media/ma-video.mp4" et "poster": "assets/media/ma-video.jpg"
-   Les entrées ci-dessous sont des CONCEPTS de démonstration (label « Concept ») : ce ne sont pas des projets clients. */
+/* Portfolio data. To add a REAL project:
+   1) copy the image to assets/media/ (e.g. assets/media/my-project.webp, 3:2 ratio, ~1200x800 recommended)
+   2) add an object to "projects" (see the commented example at the bottom)
+   3) for a video: add "video": "assets/media/my-video.mp4" and "poster": "assets/media/my-video.jpg"
+   The entries below are demo CONCEPTS (labelled "Concept"): they are not client projects. */
 window.NKOB_PROJECTS = {
   categories: {
-    web: "Site web", tourism: "Tourisme", branding: "Identité visuelle", design: "Design graphique",
-    video: "Vidéo", photo: "Photo", digital: "SEO & digital"
+    web: "Website", tourism: "Tourism", branding: "Brand identity", design: "Graphic design",
+    video: "Video", photo: "Photo", digital: "SEO & digital"
   },
   projects: [
     {
-      category: "web", title: "Réservation de riad", label: "Concept", service: "Tourisme & réservation",
-      image: "assets/img/concepts/web.svg", alt: "Concept d'interface de réservation avec calendrier de disponibilités",
-      description: "Concept de site pour un riad : parcours de réservation, calendrier de disponibilités et interface multilingue. Visuel de démonstration, non issu d'une commande client."
+      category: "web", title: "Riad booking experience", label: "Concept", service: "Tourism & Booking",
+      image: "assets/img/concepts/web.svg", alt: "Concept of a booking interface with an availability calendar",
+      description: "Concept website for a riad: booking flow, availability calendar and multilingual interface. Demo visual, not from a client order."
     },
     {
-      category: "tourism", title: "Excursions côtières — Essaouira", label: "Concept", service: "Tourisme & réservation",
-      image: "assets/img/concepts/tourism.svg", alt: "Concept de page d'atterrissage pour excursions côtières",
-      description: "Concept de page d'atterrissage pour un opérateur d'excursions côtières : appel à la réservation, itinéraire et galerie. Visuel de démonstration, non client."
+      category: "tourism", title: "Coastal excursions — Essaouira", label: "Concept", service: "Tourism & Booking",
+      image: "assets/img/concepts/tourism.svg", alt: "Concept landing page for coastal excursions",
+      description: "Concept landing page for a coastal excursion operator: booking call-to-action, itinerary and gallery. Demo visual, not a client project."
     },
     {
-      category: "branding", title: "Identité d'un atelier artisanal", label: "Concept", service: "Identité visuelle",
-      image: "assets/img/concepts/branding.svg", alt: "Concept d'identité visuelle : logo, cartes et palette de couleurs",
-      description: "Concept d'identité pour un atelier d'artisanat local : logo, système de couleurs et déclinaisons. Visuel de démonstration, non client."
+      category: "branding", title: "Artisan studio identity", label: "Concept", service: "Brand Identity",
+      image: "assets/img/concepts/branding.svg", alt: "Concept brand identity: logo, cards and colour palette",
+      description: "Concept identity for a local craft studio: logo, colour system and applications. Demo visual, not a client project."
     },
     {
-      category: "design", title: "Série d'affiches — campagne sociale", label: "Concept", service: "Identité visuelle",
-      image: "assets/img/concepts/design.svg", alt: "Concept de trois affiches pour une campagne sur les réseaux sociaux",
-      description: "Concept de série d'affiches et de gabarits pour réseaux sociaux et impression. Visuel de démonstration, non client."
+      category: "design", title: "Poster series — social campaign", label: "Concept", service: "Brand Identity",
+      image: "assets/img/concepts/design.svg", alt: "Concept of three posters for a social media campaign",
+      description: "Concept poster series and social templates for print and digital. Demo visual, not a client project."
     },
     {
-      category: "video", title: "Promo vidéo — hôtel", label: "Concept", service: "Vidéo & photo",
-      image: "assets/img/concepts/video.svg", alt: "Concept de storyboard pour une vidéo promotionnelle d'hôtel",
-      description: "Storyboard de démonstration pour une vidéo promotionnelle courte, pensée pour le web et les réseaux sociaux. Aucune vidéo client n'est publiée ici."
+      category: "video", title: "Hotel promo video", label: "Concept", service: "Video & Photo",
+      image: "assets/img/concepts/video.svg", alt: "Concept storyboard for a hotel promotional video",
+      description: "Demo storyboard for a short promotional video designed for web and social media. No client video is published here."
     },
     {
-      category: "photo", title: "Série photo — Chefchaouen", label: "Concept", service: "Vidéo & photo",
-      image: "assets/img/concepts/photo.svg", alt: "Concept de planche photo : paysages, vie locale et architecture",
-      description: "Concept de série photographique : paysages, vie locale et architecture. Visuel de démonstration."
+      category: "photo", title: "Chefchaouen photo series", label: "Concept", service: "Video & Photo",
+      image: "assets/img/concepts/photo.svg", alt: "Concept photo board: landscapes, local life and architecture",
+      description: "Concept photography series: landscapes, local life and architecture. Demo visual."
     },
     {
-      category: "digital", title: "SEO local & Google Business", label: "Concept", service: "SEO & Google Business",
-      image: "assets/img/concepts/digital.svg", alt: "Concept de visibilité locale : recherche, fiche d'établissement et courbe de croissance",
-      description: "Concept de stratégie de visibilité locale : optimisation on-page, fiche d'établissement Google et citations locales. Illustration de démonstration, sans chiffres de résultats."
+      category: "digital", title: "Local SEO & Google Business", label: "Concept", service: "SEO & Google Business",
+      image: "assets/img/concepts/digital.svg", alt: "Concept of local visibility: search, business listing and growth chart",
+      description: "Concept local-visibility strategy: on-page optimisation, Google business listing and local citations. Demo illustration with no result figures."
     }
-    /* Exemple (à copier, décommenter, adapter) :
+    /* Example (copy, uncomment, adapt):
     ,{
-      category: "web", title: "Nom du projet", label: "Client : Nom", service: "Site web",
-      image: "assets/media/mon-projet.webp", alt: "Capture d'écran du site de …",
-      video: "assets/media/mon-projet.mp4", poster: "assets/media/mon-projet.jpg",
-      description: "Ce que vous avez réalisé, pour qui, avec quels résultats RÉELS.",
-      links: [{ label: "Voir le site", url: "https://…" }]
+      category: "web", title: "Project name", label: "Client: Name", service: "Website",
+      image: "assets/media/my-project.webp", alt: "Screenshot of the website of …",
+      video: "assets/media/my-project.mp4", poster: "assets/media/my-project.jpg",
+      description: "What you built, for whom, with which REAL results.",
+      links: [{ label: "Visit the site", url: "https://…" }]
     }
     */
   ]

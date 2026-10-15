@@ -1,4 +1,4 @@
-/* NKOB CREATORS — interactions (vanilla JS, aucune dépendance) */
+/* NKOB CREATORS — interactions (vanilla JS, no dependencies) */
 (function () {
   "use strict";
   var doc = document;
@@ -11,7 +11,7 @@
   function setMenu(open) {
     if (!burger || !nav) return;
     burger.setAttribute("aria-expanded", open ? "true" : "false");
-    burger.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+    burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     nav.classList.toggle("open", open);
     doc.body.style.overflow = open ? "hidden" : "";
   }
@@ -107,7 +107,7 @@
     $$(".svc").forEach(function (s) { so.observe(s); });
   }
 
-  /* ---------- portfolio : rendu depuis assets/js/projects-data.js ---------- */
+  /* ---------- portfolio: rendered from assets/js/projects-data.js ---------- */
   var grid = $("#pgrid");
   var data = window.NKOB_PROJECTS;
   if (grid && data && data.projects) {
@@ -128,7 +128,7 @@
     var fwrap = $("#filters");
     if (fwrap) {
       var used = {}; data.projects.forEach(function (p) { used[p.category] = 1; });
-      var html = '<button type="button" class="fbtn" aria-pressed="true" data-f="all">Tout</button>';
+      var html = '<button type="button" class="fbtn" aria-pressed="true" data-f="all">All</button>';
       Object.keys(cats).forEach(function (k) { if (used[k]) html += '<button type="button" class="fbtn" aria-pressed="false" data-f="' + k + '">' + esc(cats[k]) + "</button>"; });
       fwrap.innerHTML = html;
       fwrap.addEventListener("click", function (e) {
@@ -152,7 +152,7 @@
       lbC.textContent = (cats[p.category] || p.category) + (p.label ? " · " + p.label : "");
       lbT.textContent = p.title; lbD.textContent = p.description || "";
       lbL.innerHTML = (p.links || []).map(function (l) { return '<a class="btn btn-ghost" href="' + esc(l.url) + '" target="_blank" rel="noopener noreferrer">' + esc(l.label) + ' <span class="arr" aria-hidden="true">↗</span></a>'; }).join("") +
-        '<a class="btn btn-primary" href="contact.html?service=' + encodeURIComponent(p.service || "") + '">Un projet similaire ? <span class="arr" aria-hidden="true">→</span></a>';
+        '<a class="btn btn-primary" href="contact.html?service=' + encodeURIComponent(p.service || "") + '">Need something similar? <span class="arr" aria-hidden="true">→</span></a>';
       lb.classList.add("open"); lb.setAttribute("aria-hidden", "false"); doc.body.style.overflow = "hidden";
       $(".lb-close", lb).focus();
     }
@@ -178,7 +178,7 @@
     }
   }
 
-  /* ---------- contact form : WhatsApp ou e-mail (site statique, sans serveur) ---------- */
+  /* ---------- contact form: WhatsApp or email (static site, no server) ---------- */
   var form = $("#contact-form");
   if (form) {
     var WA = form.getAttribute("data-wa"), MAIL = form.getAttribute("data-mail");
@@ -188,10 +188,10 @@
     function compose() {
       var f = form.elements;
       return {
-        subject: "Demande de devis — " + (f.service.value || "projet") + " — " + f.name.value.trim(),
-        body: "Bonjour NKOB CREATORS,\n\nNom : " + f.name.value.trim() + "\nE-mail : " + f.email.value.trim() +
-          (f.phone.value.trim() ? "\nTéléphone : " + f.phone.value.trim() : "") +
-          "\nService : " + (f.service.value || "À définir") + "\n\nMon projet :\n" + f.message.value.trim()
+        subject: "Quote request — " + (f.service.value || "project") + " — " + f.name.value.trim(),
+        body: "Hello NKOB CREATORS,\n\nName: " + f.name.value.trim() + "\nEmail: " + f.email.value.trim() +
+          (f.phone.value.trim() ? "\nPhone: " + f.phone.value.trim() : "") +
+          "\nService: " + (f.service.value || "To be defined") + "\n\nMy project:\n" + f.message.value.trim()
       };
     }
     function valid() {
@@ -201,13 +201,13 @@
       e.preventDefault(); if (!valid()) return;
       var m = compose();
       window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(m.body), "_blank", "noopener");
-      if (status) status.textContent = "WhatsApp s'ouvre avec votre message prêt à être envoyé.";
+      if (status) status.textContent = "WhatsApp is opening with your message ready to send.";
     });
     var mailBtn = $("#send-mail");
     if (mailBtn) mailBtn.addEventListener("click", function () {
       if (!valid()) return; var m = compose();
       window.location.href = "mailto:" + MAIL + "?subject=" + encodeURIComponent(m.subject) + "&body=" + encodeURIComponent(m.body);
-      if (status) status.textContent = "Votre application e-mail s'ouvre avec votre message prêt à être envoyé.";
+      if (status) status.textContent = "Your email app is opening with your message ready to send.";
     });
   }
 
